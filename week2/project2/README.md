@@ -29,6 +29,8 @@ Here's a walkthrough of implemented required features:
 
 <img src='https://i.imgur.com/Jh5Z2rx.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+If the GIF doesn't display[click here to view it directly](https://i.imgur.com/Jh5Z2rx.gif)
+
 GIF created with LICEcap
 
 ## Notes
