@@ -1,8 +1,8 @@
-# WEB102 Prework - Plant Biology Flashcards
+# WEB102 Prework - Programming Flashcards
 
 Submitted by: **Ibraheem Mohammad**
 
-This web app is a study tool for plant biology, covering topics like red algae, green algae, and land plants. I built this to help myself and other students learn about plant evolution in a more interactive way.
+This web app is a study tool for programming fundamentals, covering topics like HTML, CSS, JavaScript, arrays, and APIs. I built this to help myself and other students review key concepts in a more interactive way.
 
 Time spent: **5** hours spent in total
 
@@ -29,7 +29,7 @@ Here's a walkthrough of implemented required features:
 
 <img src='https://i.imgur.com/Jh5Z2rx.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-If the GIF doesn't display[click here to view it directly](https://i.imgur.com/Jh5Z2rx.gif)
+If the GIF doesn't display:[click here to view it directly](https://i.imgur.com/Jh5Z2rx.gif)
 
 GIF created with LICEcap
 

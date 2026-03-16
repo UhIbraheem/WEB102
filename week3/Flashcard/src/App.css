@@ -1,0 +1,147 @@
+#root {
+  width: min(820px, 100%);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.Heading {
+  color: #1a3472;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background: rgba(245, 250, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  padding: 1.1rem 1rem;
+  box-shadow: 0 10px 30px rgba(28, 59, 130, 0.14);
+}
+
+.description {
+  color: rgba(47, 62, 97, 0.9);
+  margin-top: 0.35rem;
+}
+
+.flashcard {
+  width: min(720px, 100%);
+  min-height: 240px;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 30px rgba(20, 45, 104, 0.2);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  color: #102b65;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.flashcard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(20, 45, 104, 0.24);
+}
+
+.flashcard--correct {
+  border-color: rgba(23, 165, 92, 0.75);
+  box-shadow:
+    0 16px 34px rgba(20, 45, 104, 0.2),
+    0 0 0 2px rgba(22, 157, 90, 0.25),
+    0 0 26px rgba(35, 189, 111, 0.32);
+}
+
+.flashcard--incorrect {
+  border-color: rgba(210, 56, 56, 0.75);
+  box-shadow:
+    0 16px 34px rgba(20, 45, 104, 0.2),
+    0 0 0 2px rgba(204, 64, 64, 0.25),
+    0 0 26px rgba(226, 77, 77, 0.32);
+}
+
+.flashcard h4 {
+  font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.card-count {
+  margin-top: auto;
+  align-self: flex-end;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(26, 55, 115, 0.75);
+}
+
+.controls {
+  width: min(720px, 100%);
+  margin: 1rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 2fr) 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.previous-button,
+.check-button,
+.next-button {
+  display: block;
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(130deg, #2855ba 0%, #4c7ae0 100%);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(21, 54, 128, 0.28);
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.answer-input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(129, 156, 220, 0.65);
+  background: rgba(255, 255, 255, 0.76);
+  color: #14316d;
+  font-size: 1rem;
+  padding: 0.66rem 0.75rem;
+}
+
+.answer-input:focus-visible {
+  outline: 2px solid rgba(43, 93, 198, 0.45);
+  outline-offset: 1px;
+}
+
+.next-button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.next-button:active {
+  transform: translateY(1px);
+}
+
+.feedback {
+  width: min(720px, 100%);
+  margin: 0.8rem auto 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.feedback-correct {
+  color: #0a9f57;
+}
+
+.feedback-incorrect {
+  color: #c83838;
+}
+
+@media (max-width: 640px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .flashcard {
+    min-height: 270px;
+  }
+}
