@@ -1,14 +1,294 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
+/* Main App Layout */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
 }
 
-h1, h2, h3 {
+/* Heading Section */
+.heading {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 0.5rem;
+}
+
+.heading h2 {
+  background: linear-gradient(135deg, var(--accent) 0%, #00f0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Generator Container */
+.generator-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.generator-container:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 30px rgba(0, 212, 255, 0.1);
+}
+
+.generator-container h3 {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* GIF Container */
+.giphy-container {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, #1f1f1f 100%);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  min-height: 300px;
+  justify-content: center;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.giphy-container img {
+  max-width: 100%;
+  max-height: 350px;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: var(--transition);
+  filter: drop-shadow(0 4px 12px rgba(0, 212, 255, 0.2));
+}
+
+.giphy-container img:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 6px 16px rgba(0, 212, 255, 0.4));
+}
+
+.giphy-container h4 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+/* Global Button Styling */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Primary Button - Generate */
+.generatep-gif,
+.generate-btn {
+  background: linear-gradient(135deg, var(--accent) 0%, #00f0ff 100%);
+  color: #000;
+  font-weight: 700;
+  padding: 0.9rem 2.5rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  border: 2px solid transparent;
+}
+
+.generatep-gif:hover,
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+}
+
+.generatep-gif:active,
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+/* Tag/Ban Button */
+.giphy-container button {
+  background: var(--bg-tertiary);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.giphy-container button:active {
+  transform: scale(0.96);
+}
+
+/* Tag Helper Text */
+.tag-help-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-style: italic;
+  letter-spacing: 0.3px;
+}
+
+/* Banned Categories Section */
+.banned-categories-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.banned-categories-container h2 {
+  color: var(--danger);
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.banned-categories-container ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.banned-categories-container li {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
   color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Available Categories Section */
+#root > div:last-child {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+#root > div:last-child h1 {
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+#root > div:last-child ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+#root > div:last-child li {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, #2f2f2f 100%);
+  color: var(--text-primary);
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+  text-align: center;
+}
+
+#root > div:last-child li:hover {
+  background: linear-gradient(135deg, var(--accent) 0%, #00d4ff 100%);
+  color: #000;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Loading State */
+p {
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-layout {
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .heading {
+    padding: 1.5rem 1rem;
+  }
+
+  .heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .generator-container {
+    padding: 1.5rem;
+  }
+
+  .giphy-container {
+    min-height: 250px;
+  }
+
+  .giphy-container img {
+    max-height: 250px;
+  }
+
+  #root > div:last-child ul {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .generatep-gif {
+    padding: 0.8rem 1.8rem;
+  }
 }

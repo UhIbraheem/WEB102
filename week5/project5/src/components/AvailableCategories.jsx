@@ -1,6 +1,3 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-
 function AvailableCategories({categories}) {
 
   if (categories.length === 0) return <p>loading...</p>

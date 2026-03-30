@@ -1,5 +1,4 @@
-import React from 'react'
-function GifGenerator( {currentGiph, toggleBanCategory} ) {
+function GifGenerator( {currentGiph, toggleBanCategory, handleGenerate} ) {
   const {url, title, tag} = currentGiph
   const handleClick = () =>{
     toggleBanCategory(tag)
@@ -8,7 +7,7 @@ function GifGenerator( {currentGiph, toggleBanCategory} ) {
   return (
     <div className='generator-container'>
         <h3> Click below to generate a random gif!</h3>
-        <button className='generatep-gif'>Generate</button>
+        <button className='generatep-gif' onClick={handleGenerate}>Generate</button>
 
         <br />
 
@@ -16,6 +15,7 @@ function GifGenerator( {currentGiph, toggleBanCategory} ) {
           <img src={url} alt={title} />
           <h4> {title || "Untitled Giphy"}</h4>
           <button onClick={handleClick}>{tag}</button>
+          <p className='tag-help-text'>Click the tag to ban/unban it from future generations</p>
         </div>
       
     </div>

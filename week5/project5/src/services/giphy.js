@@ -14,3 +14,20 @@ export const fetchCategories = async () => {
 
 }
 
+export const fetchRandomGif = async(tag) => {
+    const api_key = import.meta.env.VITE_GIPHY_API_KEY;
+    const encodedTag = encodeURIComponent(tag)
+
+    const response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${api_key}&tag=${encodedTag}&rating=g`)
+    const data = await response.json();
+
+    if (response.ok){
+        return {
+            url: data.data.images.fixed_height.url,
+            title: data.data.title,
+            tag: tag
+        }
+    } else {
+        throw new Error("Bruh, fix the fetchRandomGif function")
+    }
+}

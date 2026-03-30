@@ -1,5 +1,3 @@
-import React from 'react'
-
 function BannedCategories( { bannedCategories } ) {
   const arrFromSet = [...bannedCategories]
   const renderBanned = arrFromSet.map(tag => (
