@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { fetchGenres, fetchMovies } from '../utils/tmdb'
+import Movies from './components/Movies/Movies'
+import './App.css';
 
 function App() {
   const [movies, setMovies] = useState([])
-  const [genre, setGenre] = useState({})
+  const [genres, setGenres] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
 
   // use effect hook to fetch the set of movies from the api
   useEffect( () => {
@@ -11,7 +14,9 @@ function App() {
     const getMovies = async () => {
       try{
         const data = await fetchMovies();
-        //setMovies(data.results)
+        //testing line + visualizing data
+        setMovies(data)
+        setIsLoading(false)
         console.log(data)
       }
       catch(error){
@@ -27,8 +32,16 @@ function App() {
     // key value pairs with the genre id being the key and the genre name being the val
     const getGenres = async () => {
       try{
-        const data = await fetchGenres();
-        //setGenre(data.genres)
+        const info = await fetchGenres();
+        //transforming data into mapped genre num to genre name
+        const data = info.reduce((acc, item)=>{
+          //acc is the new map were creating and appending to
+          // each dict item has a .id is the id num and .name is the name
+          acc[item.id] = item.name;
+          return acc
+        }, {})
+        setGenres(data)
+        setIsLoading(false)
         console.log(data)
       }
       catch (error){
@@ -41,7 +54,15 @@ function App() {
 
   return (
     <div>
-      
+      { isLoading ? (
+        <p>Loading movie info...</p>
+      ) : (
+      <Movies 
+        movies={movies}
+        genres={genres}
+      />
+      )
+}
     </div>
   )
 }
