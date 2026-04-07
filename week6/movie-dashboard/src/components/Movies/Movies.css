@@ -1,21 +1,97 @@
-.movie-container{
+.movie-container {
     box-sizing: border-box;
-    background-color: rgba(40, 40, 40, 0.739);
-    padding: 10px;
-    margin: 15px;
-    border: 2px solid rgb(132, 132, 132) ;
+    background: rgba(18, 18, 30, 0.92);
+    padding: 16px;
+    margin: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
 }
 
-.movie-row{
-    display: flex;
-    justify-content: space-between;
+.movie-row,
+.header-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 200px 120px 80px;
     align-items: center;
-    color: rgb(207, 207, 207);
-    background-color: rgba(76, 76, 76, 0.699);
-    margin-top: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border: 1px solid rgb(206, 206, 206);
-    border-radius: 16px;
+    gap: 16px;
+    color: rgb(200, 200, 200);
+    background: rgba(255, 255, 255, 0.04);
+    margin-top: 6px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.movie-row {
+    cursor: pointer;
+}
+
+.movie-row:hover {
+    border-color: rgba(255, 215, 0, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.header-row {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    background: rgba(255, 255, 255, 0.06);
+    margin-top: 0;
+    padding: 10px 16px;
+}
+
+.movie-number {
+    color: #666;
+    font-weight: 600;
+    text-align: center;
+}
+
+.movie-title {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.movie-row:hover .movie-title {
+    color: gold;
+}
+
+.movie-rating {
+    color: limegreen;
+    font-weight: 700;
+    text-align: center;
+    font-size: 14px;
+}
+
+.movie-release-date {
+    color: #888;
+    font-size: 13px;
+}
+
+.movie-genres {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.genre-tag {
+    background: rgba(255, 215, 0, 0.1);
+    color: rgba(255, 215, 0, 0.7);
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.no-results {
+    color: #666;
+    text-align: center;
+    padding: 40px;
+    font-size: 15px;
 }
