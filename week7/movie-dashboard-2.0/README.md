@@ -30,24 +30,12 @@ The following **optional** features are implemented:
 	- User should be able to use some mechanism to toggle between displaying and hiding visualizations
 
 
-The following **additional** features are implemented:
-
-* [x] Search, genre filtering, and sorting controls for exploring the movie dataset.
-* [x] Summary cards that highlight how many movies are visible, the newest release, and the highest-rated movie.
-* [x] Responsive layout that keeps the shared sidebar and dashboard usable across screen sizes.
-
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
 
